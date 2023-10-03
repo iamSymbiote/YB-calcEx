@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+:root {
+    --bg-primary: #dde3e6;
+    --bg-lprimary: #f1f1f1;
+    --bg-secondary: #738b9b;
+    --bg-lsecondary: #a0afb7;
+    --red: #fc6464;
+    --lred: rgb(240, 125, 125);
+    --transition: all ease-out 0.3s;
+}
+
+body,
+body *,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-primary);
+}
+
+p {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4 {
+    font-size: 2px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+ /*
+ CALCULATOR
+ */
+
+.calculator {
+    width: 300px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.display-container {
+    min-height: 150px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    word-break: break-all;
+    background-color: var(--bg-secondary);
+}
+
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.span-2 {
+    grid-column: span 1;
+}
+
+.btn {
+    height: 60px;
+    cursor: pointer;
+    border: solid 1px var(--bg-lprimary);
+    font-size: 18px;
+    color: var(--bg-secondary);
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--bg-lsecondary);
+    color: #fff;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn-operation,
+.btn-dot {
+    font-size: 30px;
+}
+
+.btn-operation,
+.btn-clear,
+.btn-delete {
+    background-color: var(--bg-primary);
+}
+
+.btn-number {
+    background-color: #fff;
+}
+
+.btn-equals {
+    color: #fff;
+    background-color: var(--red);
+}
+
+.btn-equals:hover {
+    background-color: var(--lred);
+}
