@@ -3,27 +3,24 @@ import { Calculator } from "./Calculator.js";
 const previousValueText = document.querySelector(".previous-value-text");
 const currentValueText = document.querySelector(".current-value-text");
 
-const btnClear = document.querySelector("button[data-clear]");
-const btnDelete = document.querySelector("button[data-delete]");
-const btnBackDelete = document.querySelector("button[data-back-delete]");
-const btnEquals = document.querySelector("button[data-equals]");
-const btnsNumber = document.querySelectorAll("button[data-number]");
-const btnsOperation = document.querySelectorAll("button[data-operation]");
-
 const calculator = new Calculator(previousValueText, currentValueText);
 
-btnClear.addEventListener("click", () => {
-    calculator.clear();
-    calculator.updateDisplay();
-});
+const container = document.querySelector(".buttons-container");
 
-btnDelete.addEventListener("click", () => {
-    calculator.delete();
-    calculator.updateDisplay();
-});
+container.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.matches("button[data-clear]")) {
+        calculator.clear();
+    } else if (target.matches("button[data-delete], button[data-back-delete]")) {
+        calculator.delete();
+    } else if (target.matches("button[data-equals]")) {
+        calculator.compute();
+    } else if (target.matches("button[data-number]")) {
+        calculator.appendNumber(target.innerHTML);
+    } else if (target.matches("button[data-operation]")) {
+        calculator.chooseOperation(target.innerHTML);
+    }
 
-btnBackDelete.addEventListener("click", () => {
-    calculator.delete();
     calculator.updateDisplay();
 });
 
@@ -32,23 +29,4 @@ document.addEventListener("keydown", (e) => {
         calculator.delete();
         calculator.updateDisplay();
     }
-});
-
-btnEquals.addEventListener("click", () => {
-    calculator.compute();
-    calculator.updateDisplay();
-});
-
-btnsNumber.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        calculator.appendNumber(e.currentTarget.innerHTML);
-        calculator.updateDisplay();
-    });
-});
-
-btnsOperation.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        calculator.chooseOperation(e.currentTarget.innerHTML);
-        calculator.updateDisplay();
-    });
 });
