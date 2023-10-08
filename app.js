@@ -1,10 +1,11 @@
-import { Calculator } from "./calculator.js";
+import { Calculator } from "./Calculator.js";
 
 const previousValueText = document.querySelector(".previous-value-text");
 const currentValueText = document.querySelector(".current-value-text");
 
 const btnClear = document.querySelector("button[data-clear]");
 const btnDelete = document.querySelector("button[data-delete]");
+const btnBackDelete = document.querySelector("button[data-back-delete]");
 const btnEquals = document.querySelector("button[data-equals]");
 const btnsNumber = document.querySelectorAll("button[data-number]");
 const btnsOperation = document.querySelectorAll("button[data-operation]");
@@ -19,6 +20,18 @@ btnClear.addEventListener("click", () => {
 btnDelete.addEventListener("click", () => {
     calculator.delete();
     calculator.updateDisplay();
+});
+
+btnBackDelete.addEventListener("click", () => {
+    calculator.delete();
+    calculator.updateDisplay();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Backspace") {
+        calculator.delete();
+        calculator.updateDisplay();
+    }
 });
 
 btnEquals.addEventListener("click", () => {

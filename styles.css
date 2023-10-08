@@ -70,7 +70,7 @@ h6 {
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 
 .display-container {
@@ -83,6 +83,12 @@ h6 {
     flex-wrap: wrap;
     word-break: break-all;
     background-color: var(--bg-secondary);
+
+    & span {
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+    }
 }
 
 

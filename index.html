@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Calculator Exercise by Y&B</title>
     <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="app.js"></script>
 </head>
 <body>
 <main class="calculator">
     <div class="display-container">
-
+        <span class="previous-value-text"></span>
+        <span class="current-value-text"></span>
     </div>
     <div class="buttons-container">
         <button class="btn btn-clear" data-clear>CE</button>
         <button class="btn btn-delete span-2" data-delete>DEL</button>
-        <button class="btn btn-operation span-2" data-delete>⌫</button>
+        <button class="btn btn-operation span-2" data-back-delete>⌫</button>
         <button class="btn btn-operation" data-operation>÷</button>
         <button class="btn btn-number" data-number>7</button>
         <button class="btn btn-number" data-number>8</button>
