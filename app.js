@@ -1,4 +1,4 @@
-import { Calculator } from "./Calculator.js";
+import { Calculator } from "./calculator.js";
 
 const previousValueText = document.querySelector(".previous-value-text");
 const currentValueText = document.querySelector(".current-value-text");
@@ -21,7 +21,7 @@ btnDelete.addEventListener("click", () => {
     calculator.updateDisplay();
 });
 
-btnEquals.addEventListener("click", (e) => {
+btnEquals.addEventListener("click", () => {
     calculator.compute();
     calculator.updateDisplay();
 });
